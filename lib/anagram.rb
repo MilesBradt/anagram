@@ -13,6 +13,10 @@ class String
     }
 
     if (first_has_spaces) | (second_has_spaces)
+      each_word_first = word_one.upcase().split(" ")
+      each_word_second = word_one.upcase().split(" ")
+
+      
       p "These inputs have spaces"
       return "These inputs have spaces"
     else
