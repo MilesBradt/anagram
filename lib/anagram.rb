@@ -1,6 +1,13 @@
 class String
 
   def anagram_check?(word_one, word_two)
+    check_for_multiple_first = word_one.upcase().split("")
+    check_for_multiple_second = word_one.upcase().split("")
+
+    first_has_spaces = check_for_multiple_first.any? { |i|
+      vowels.include? i
+    }
+
     word_one_check = word_one.upcase().split("")
     word_two_check = word_two.upcase().split("")
     vowels = ["A", "E", "I", "O", "U"]

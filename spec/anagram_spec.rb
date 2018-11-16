@@ -25,9 +25,14 @@ require ('anagram')
         expect(new_test.anagram_check?("ntwrd", "drwtn")).to(eq("These do not have vowels"))
       end
 
-      it("Should check for multiple words") do
+      it("Should check if two inputs have spaces for multiple words") do
           new_test = String.new()
-          expect(new_test.anagram_check?("This is a test", "Hist si a tset")).to(eq("These words are all anagrams"))
+          expect(new_test.anagram_check?("This is a test", "Hist si a tset")).to(eq("These inputs have spaces"))
         end
+
+      # it("Should check for multiple words") do
+      #     new_test = String.new()
+      #     expect(new_test.anagram_check?("This is a test", "Hist si a tset")).to(eq("These words are all anagrams"))
+      #   end
 
 end
