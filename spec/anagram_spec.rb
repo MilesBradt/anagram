@@ -18,12 +18,12 @@ require ('anagram')
     it("Should check if two words are anagrams regardless of capitalization") do
         new_test = String.new()
         expect(new_test.anagram_check?("Tea", "Eat")).to(eq("These words are anagrams"))
-      end
+    end
 
     it("Should check if two inputs have vowels") do
         new_test = String.new()
         expect(new_test.anagram_check?("ntwrd", "drwtn")).to(eq("These do not have vowels"))
-      end
+    end
 
       # it("Should check if two inputs have spaces for multiple words") do
       #     new_test = String.new()
@@ -33,6 +33,11 @@ require ('anagram')
       it("Should check for multiple words") do
           new_test = String.new()
           expect(new_test.anagram_check?("This is a test", "Hist si a tset")).to(eq("These words are all anagrams"))
-        end
+      end
+
+      it("Should check for multiple words") do
+          new_test = String.new()
+          expect(new_test.anagram_check?("This is a test", "Nottrue si a tset")).to(eq("These words are all anagrams"))
+      end
 
 end
