@@ -2,7 +2,7 @@ class String
 
   def anagram_check?(word_one, word_two)
     check_for_multiple_first = word_one.upcase().split("")
-    check_for_multiple_second = word_one.upcase().split("")
+    check_for_multiple_second = word_two.upcase().split("")
 
     first_has_spaces = check_for_multiple_first.any? { |i|
       " ".include? i
@@ -14,11 +14,27 @@ class String
 
     if (first_has_spaces) | (second_has_spaces)
       each_word_first = word_one.upcase().split(" ")
-      each_word_second = word_one.upcase().split(" ")
+      each_word_second = word_two.upcase().split(" ")
 
-      
-      p "These inputs have spaces"
-      return "These inputs have spaces"
+      each_word_first.zip(each_word_second).each do |word1, word2|
+        word_check_first = word1.upcase().split("")
+        word_check_second = word2.upcase().split("")
+
+        is_each_anagram = word_check_first.all? { |i|
+          word_check_second.include? i
+        }
+
+        if (is_each_anagram)
+          p "These words are all anagrams"
+          return "These words are all anagrams"
+        else
+          p "These words are all not anagrams"
+          return "These words are all not anagrams"
+        end
+      end
+
+      # p "These inputs have spaces"
+      # return "These inputs have spaces"
     else
       word_one_check = word_one.upcase().split("")
       word_two_check = word_two.upcase().split("")
