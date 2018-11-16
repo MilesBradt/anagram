@@ -3,6 +3,7 @@ class String
   def anagram_check?(word_one, word_two)
     @anagram_array = []
     @antigram_array = []
+    @not_vowels_array = []
     @vowels = ["A", "E", "I", "O", "U", "Y"]
     check_for_multiple_first = word_one.upcase().split("")
     check_for_multiple_second = word_two.upcase().split("")
@@ -46,17 +47,23 @@ class String
           end
           else
             p "#{word1} and #{word2} do not have vowels"
+            @not_vowels_array.push(word1, word2)
           end
         end
-      if (@antigram_array === [])
-        return "These words are all anagrams"
-      elsif (@anagram_array === [])
-        return "None of these words are anagrams"
-      else
-      anagrams = @anagram_array.join(" and ")
-      anagrams + " are anagrams"
-      antigrams = @antigram_array.join(" and ")
-      antigrams + " are not anagrams"
+      if (@not_vowels_array === [])
+        if (@antigram_array === [])
+          return "These words are all anagrams"
+        elsif (@anagram_array === [])
+          return "None of these words are anagrams"
+        else
+          anagrams = @anagram_array.join(" and ")
+          anagrams + " are anagrams"
+          antigrams = @antigram_array.join(" and ")
+          antigrams + " are not anagrams"
+        end
+      else 
+      no_vowels = @not_vowels_array.join(" and ")
+      no_vowels + " do not have vowels"
       end
 
       # p "These inputs have spaces"
