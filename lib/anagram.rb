@@ -24,19 +24,31 @@ class String
       each_word_first.zip(each_word_second).each do |word1, word2|
         word_check_first = word1.upcase().split("")
         word_check_second = word2.upcase().split("")
+
+        is_vowel_first = word_check_first.any? { |i|
+          @vowels.include? i
+        }
+
+        is_vowel_second = word_check_second.any? { |i|
+          @vowels.include? i
+        }
+
         is_each_anagram = word_check_first.all? { |i|
           word_check_second.include? i
         }
-
-        if (is_each_anagram)
-          p "#{word1} and #{word2} are anagrams"
-          @anagram_array.push(word1, word2)
-        else
-          p "#{word1} and #{word2} are not anagrams"
-          @antigram_array.push(word1, word2)
+        if (is_vowel_first) | (is_vowel_second)
+          if (is_each_anagram)
+            p "#{word1} and #{word2} are anagrams"
+            @anagram_array.push(word1, word2)
+          else
+            p "#{word1} and #{word2} are not anagrams"
+            @antigram_array.push(word1, word2)
+          end
+          else
+            p "#{word1} and #{word2} do not have vowels"
+            return "#{word1} and #{word2} do not have vowels"
+          end
         end
-      end
-
       if (@antigram_array === [])
         return "These words are all anagrams"
       elsif (@anagram_array === [])
