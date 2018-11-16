@@ -16,10 +16,10 @@ class String
       each_word_first = word_one.upcase().split(" ")
       each_word_second = word_two.upcase().split(" ")
 
+      # https://stackoverflow.com/questions/3580049/whats-the-ruby-way-to-iterate-over-two-arrays-at-once
       each_word_first.zip(each_word_second).each do |word1, word2|
         word_check_first = word1.upcase().split("")
         word_check_second = word2.upcase().split("")
-
         is_each_anagram = word_check_first.all? { |i|
           word_check_second.include? i
         }
@@ -28,10 +28,11 @@ class String
           p "These words are all anagrams"
           return "These words are all anagrams"
         else
-          p "These words are all not anagrams"
-          return "These words are not all anagrams"
+          p "#{word1} and #{word2} are not anagrams"
+          return "#{word1} and #{word2} are not anagrams"
         end
       end
+
 
       # p "These inputs have spaces"
       # return "These inputs have spaces"

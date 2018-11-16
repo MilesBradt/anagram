@@ -30,14 +30,19 @@ require ('anagram')
       #     expect(new_test.anagram_check?("This is a test", "Hist si a tset")).to(eq("These inputs have spaces"))
       #   end
 
-      it("Should check for multiple words") do
+      it("Should check for multiple words being anagrams") do
           new_test = String.new()
           expect(new_test.anagram_check?("This is a test", "Hist si a tset")).to(eq("These words are all anagrams"))
       end
 
-      it("Should check for multiple words") do
+      it("Should check for multiple words not being anagrams") do
           new_test = String.new()
-          expect(new_test.anagram_check?("This is a test", "Nottrue si a tset")).to(eq("These words are not all anagrams"))
+          expect(new_test.anagram_check?("This is a test", "Nottrue si a tset")).to(eq("THIS and NOTTRUE are not anagrams"))
+      end
+
+      it("Should check if any word is not an anagram") do
+          new_test = String.new()
+          expect(new_test.anagram_check?("This is a test", "Hist si nope tset")).to(eq("A and NOPE are not anagrams"))
       end
 
 end
