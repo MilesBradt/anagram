@@ -34,8 +34,11 @@ class String
           @antigram_array.push(word1, word2)
         end
       end
+
       if (@antigram_array === [])
         return "These words are all anagrams"
+      elsif (@anagram_array === [])
+        return "None of these words are anagrams"
       else
       anagrams = @anagram_array.join(" and ")
       anagrams + " are anagrams"
