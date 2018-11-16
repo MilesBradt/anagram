@@ -12,7 +12,7 @@ require ('anagram')
 
     it("Should check if one word includes the same characters as another word") do
       new_test = String.new()
-      expect(new_test.anagram_check?("tea", "not")).to(eq("These words are anagrams"))
+      expect(new_test.anagram_check?("tea", "not")).to(eq("These words are not anagrams"))
     end
 
     it("Should check if two words are anagrams regardless of capitalization") do
