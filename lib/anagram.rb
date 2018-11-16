@@ -29,7 +29,7 @@ class String
           return "These words are all anagrams"
         else
           p "These words are all not anagrams"
-          return "These words are all not anagrams"
+          return "These words are not all anagrams"
         end
       end
 

@@ -37,7 +37,7 @@ require ('anagram')
 
       it("Should check for multiple words") do
           new_test = String.new()
-          expect(new_test.anagram_check?("This is a test", "Nottrue si a tset")).to(eq("These words are all anagrams"))
+          expect(new_test.anagram_check?("This is a test", "Nottrue si a tset")).to(eq("These words are not all anagrams"))
       end
 
 end
