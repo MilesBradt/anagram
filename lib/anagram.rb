@@ -3,9 +3,11 @@ class String
   def anagram_check?(word_one, word_two)
     @anagram_array = []
     @antigram_array = []
+    @vowels = ["A", "E", "I", "O", "U", "Y"]
     check_for_multiple_first = word_one.upcase().split("")
     check_for_multiple_second = word_two.upcase().split("")
 
+    # https://stackoverflow.com/questions/8026300/check-for-multiple-items-in-array-using-include-ruby-beginner
     first_has_spaces = check_for_multiple_first.any? { |i|
       " ".include? i
     }
@@ -46,20 +48,19 @@ class String
       antigrams + " are not anagrams"
       end
 
-
       # p "These inputs have spaces"
       # return "These inputs have spaces"
     else
       word_one_check = word_one.upcase().split("")
       word_two_check = word_two.upcase().split("")
-      vowels = ["A", "E", "I", "O", "U"]
+
 
       is_vowel_first = word_one_check.any? { |i|
-        vowels.include? i
+        @vowels.include? i
       }
 
       is_vowel_second = word_two_check.any? { |i|
-        vowels.include? i
+        @vowels.include? i
       }
 
       is_anagram = word_one_check.all? { |i|
