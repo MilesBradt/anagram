@@ -10,14 +10,19 @@ require ('anagram')
       expect(new_test.anagram_check?("tea", "eat")).to(eq("These words are anagrams"))
     end
 
+    it("Should check if one word includes the same characters as another word") do
+      new_test = String.new()
+      expect(new_test.anagram_check?("tea", "not")).to(eq("These words are anagrams"))
+    end
+
     it("Should check if two words are anagrams regardless of capitalization") do
         new_test = String.new()
         expect(new_test.anagram_check?("Tea", "Eat")).to(eq("These words are anagrams"))
       end
 
     it("Should check if two inputs have vowels") do
-          new_test = String.new()
-          expect(new_test.anagram_check?("ntwrd", "drwtn")).to(eq("These do not have vowels"))
-        end
+        new_test = String.new()
+        expect(new_test.anagram_check?("ntwrd", "drwtn")).to(eq("These do not have vowels"))
+      end
 
 end
