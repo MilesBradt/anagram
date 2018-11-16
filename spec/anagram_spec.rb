@@ -30,7 +30,7 @@ require ('anagram')
       #     expect(new_test.anagram_check?("This is a test", "Hist si a tset")).to(eq("These inputs have spaces"))
       #   end
 
-      it("Check first word being an anagram") do
+      it("Check all words being an anagram") do
           new_test = String.new()
           expect(new_test.anagram_check?("This is a test", "Hist si a tset")).to(eq("These words are all anagrams"))
       end
