@@ -26,13 +26,10 @@ class String
 
         if (is_each_anagram)
           p "These words are all anagrams"
-          return "These words are all anagrams"
         else
           p "#{word1} and #{word2} are not anagrams"
-          return "#{word1} and #{word2} are not anagrams"
         end
       end
-
 
       # p "These inputs have spaces"
       # return "These inputs have spaces"
