@@ -46,7 +46,6 @@ class String
           end
           else
             p "#{word1} and #{word2} do not have vowels"
-            return "#{word1} and #{word2} do not have vowels"
           end
         end
       if (@antigram_array === [])
