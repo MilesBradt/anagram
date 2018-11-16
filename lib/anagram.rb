@@ -1,6 +1,8 @@
 class String
 
   def anagram_check?(word_one, word_two)
+    @anagram_array = []
+    @antigram_array = []
     check_for_multiple_first = word_one.upcase().split("")
     check_for_multiple_second = word_two.upcase().split("")
 
@@ -25,11 +27,22 @@ class String
         }
 
         if (is_each_anagram)
-          p "These words are all anagrams"
+          p "#{word1} and #{word2} are anagrams"
+          @anagram_array.push(word1, word2)
         else
           p "#{word1} and #{word2} are not anagrams"
+          @antigram_array.push(word1, word2)
         end
       end
+      if (@antigram_array === [])
+        return "These words are all anagrams"
+      else
+      anagrams = @anagram_array.join(" and ")
+      anagrams + " are anagrams"
+      antigrams = @antigram_array.join(" and ")
+      antigrams + " are not anagrams"
+      end
+
 
       # p "These inputs have spaces"
       # return "These inputs have spaces"
