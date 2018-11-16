@@ -1,7 +1,7 @@
-# Having these on my home PC broke rspec testing
+# Having this on my home PC broke rspec testing
 # require ('rspec')
-# require ('pry')
 
+require ('pry')
 require ('anagram')
 
   describe("#anagram_check?") do
