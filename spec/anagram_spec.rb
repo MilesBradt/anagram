@@ -15,4 +15,9 @@ require ('anagram')
         expect(new_test.anagram_check?("Tea", "Eat")).to(eq("These words are anagrams"))
       end
 
+    it("Should check if two inputs have vowels") do
+          new_test = String.new()
+          expect(new_test.anagram_check?("ntwrd", "drwtn")).to(eq("These do not have vowels"))
+        end
+
 end
