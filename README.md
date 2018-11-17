@@ -10,12 +10,12 @@ _Runs either one word or a sentence through logic to determine if they contain a
 
 ## Setup/Installation Requirements
 
-* _Clone GitHub URL in terminal_
-* _In terminal, cd into lib folder_
-* _type 'irb' in terminal_
-* _type 'load "anagram.rb"'_
-* _type 'new_test = String.new()''
-* _type 'new_test.anagram_check?(**the first set of words you want to put go here**, **the second set of words you want to put go here**)'_
+* Clone GitHub URL in terminal
+* In terminal, cd into lib folder
+* type 'irb' in terminal
+* type 'load "anagram.rb"'
+* type 'new_test = String.new()''
+* type 'new_test.anagram_check?(**the first set of words you want to put go here**, **the second set of words you want to put go here**)'
 
 ## Known Bugs
 
@@ -25,6 +25,6 @@ _Runs either one word or a sentence through logic to determine if they contain a
 
   * _Even if they aren't technically words in the english dictionary, they'll still count as an anagram_
 
-  
+
 ## Technologies Used
 _Ruby_
