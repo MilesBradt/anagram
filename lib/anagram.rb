@@ -7,7 +7,7 @@ class Anagram
     @vowels = ["A", "E", "I", "O", "U", "Y"]
   end
 
-  def anagram_check?(word_one, word_two)
+  def anagram_check(word_one, word_two)
     check_for_multiple_first = word_one.upcase().split("")
     check_for_multiple_second = word_two.upcase().split("")
 
