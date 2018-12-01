@@ -1,10 +1,13 @@
-class String
+class Anagram
 
-  def anagram_check?(word_one, word_two)
+  def initialize
     @anagram_array = []
     @antigram_array = []
     @not_vowels_array = []
     @vowels = ["A", "E", "I", "O", "U", "Y"]
+  end
+
+  def anagram_check?(word_one, word_two)
     check_for_multiple_first = word_one.upcase().split("")
     check_for_multiple_second = word_two.upcase().split("")
 
@@ -61,7 +64,7 @@ class String
           antigrams = @antigram_array.join(" and ")
           antigrams + " are not anagrams"
         end
-      else 
+      else
       no_vowels = @not_vowels_array.join(" and ")
       no_vowels + " do not have vowels"
       end
