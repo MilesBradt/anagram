@@ -3,6 +3,7 @@ class Anagram
   def initialize
     @anagram_array = []
     @antigram_array = []
+    @neither_array = []
     @not_vowels_array = []
     @vowels = ["A", "E", "I", "O", "U", "Y"]
   end
@@ -29,6 +30,7 @@ class Anagram
         word_check_first = word1.upcase().split("")
         word_check_second = word2.upcase().split("")
 
+
         is_vowel_first = word_check_first.any? { |i|
           @vowels.include? i
         }
@@ -40,13 +42,19 @@ class Anagram
         is_each_anagram = word_check_first.all? { |i|
           word_check_second.include? i
         }
+
+        is_antigram = (word_check_first & word_check_second).any?
+
         if (is_vowel_first) | (is_vowel_second)
           if (is_each_anagram)
             p "#{word1} and #{word2} are anagrams"
             @anagram_array.push(word1, word2)
-          else
-            p "#{word1} and #{word2} are not anagrams"
+          elsif (is_antigram)
+            p "#{word1} and #{word2} are antigrams"
             @antigram_array.push(word1, word2)
+          else
+            p "#{word1} and #{word2} are antigrams"
+            @neither_array.push(word1, word2)
           end
           else
             p "#{word1} and #{word2} do not have vowels"
@@ -54,15 +62,20 @@ class Anagram
           end
         end
       if (@not_vowels_array === [])
-        if (@antigram_array === [])
+        if (@antigram_array === [] && @neither_array === [])
           return "These words are all anagrams"
-        elsif (@anagram_array === [])
+        elsif (@anagram_array === [] && @neither_array === [])
+          return "These words are all antigrams"
+        elsif (@anagram_array === [] && @antigram_array === [])
           return "None of these words are anagrams"
-        else
+        elsif (@neither_array === [])
           anagrams = @anagram_array.join(" and ")
           anagrams + " are anagrams"
           antigrams = @antigram_array.join(" and ")
-          antigrams + " are not anagrams"
+          antigrams + " are antigrams"
+        else
+          neither = @neither_array.join(" and ")
+          neither + " aren't anagrams or antigrams"
         end
       else
       no_vowels = @not_vowels_array.join(" and ")
@@ -89,7 +102,6 @@ class Anagram
       is_antigram = (word_one_check & word_two_check).any?
 
 
-
       if (is_vowel_first) | (is_vowel_second)
         if (is_anagram)
           p "These words are anagrams"
@@ -97,6 +109,9 @@ class Anagram
         elsif (is_antigram)
           p "These words are antigrams"
           return "These words are antigrams"
+        else
+          p "These words aren't anagrams or antigrams"
+          return "These words aren't anagrams or antigrams"
         end
       else
         p "These do not have vowels"
@@ -105,11 +120,5 @@ class Anagram
     end
   end
 
-  def antigram(word1, word2)
-    word_check_first = word1.upcase().split("")
-    word_check_second = word2.upcase().split("")
-
-    is_antigram = (word_check_first & word_check_second).any?
-  end
 
 end

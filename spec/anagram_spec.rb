@@ -16,6 +16,11 @@ require ('anagram')
       expect(new_test.anagram_check("tea", "not")).to(eq("These words are antigrams"))
     end
 
+    it("checks if two words aren't anagrams or antigrams") do
+      new_test = Anagram.new()
+      expect(new_test.anagram_check("tea", "now")).to(eq("These words aren't anagrams or antigrams"))
+    end
+
     it("Should check if two words are anagrams regardless of capitalization") do
         new_test = Anagram.new()
         expect(new_test.anagram_check("Tea", "Eat")).to(eq("These words are anagrams"))
@@ -36,14 +41,14 @@ require ('anagram')
         expect(new_test.anagram_check("This is a test", "Hist si a tset")).to(eq("These words are all anagrams"))
     end
 
-    it("Check first not word being an amagram") do
+    it("Check first word being antigrams") do
         new_test = Anagram.new()
-        expect(new_test.anagram_check("This is a test", "Nottrue si a tset")).to(eq("THIS and NOTTRUE are not anagrams"))
+        expect(new_test.anagram_check("This is a test", "Nottrue si a tset")).to(eq("THIS and NOTTRUE are antigrams"))
     end
 
     it("Should check if any one word is not an anagram") do
         new_test = Anagram.new()
-        expect(new_test.anagram_check("This is a test", "Hist si nope tset")).to(eq("A and NOPE are not anagrams"))
+        expect(new_test.anagram_check("This is a test", "Hist si nope tset")).to(eq("A and NOPE aren't anagrams or antigrams"))
     end
 
     it("Check if any multiple word doesn't have a vowel") do
