@@ -69,8 +69,6 @@ class Anagram
       no_vowels + " do not have vowels"
       end
 
-      # p "These inputs have spaces"
-      # return "These inputs have spaces"
     else
       word_one_check = word_one.upcase().split("")
       word_two_check = word_two.upcase().split("")
@@ -88,19 +86,30 @@ class Anagram
         word_two_check.include? i
       }
 
+      is_antigram = (word_one_check & word_two_check).any?
+
+
+
       if (is_vowel_first) | (is_vowel_second)
         if (is_anagram)
           p "These words are anagrams"
           return "These words are anagrams"
-        else
-          p "These words are not anagrams"
-          return "These words are not anagrams"
+        elsif (is_antigram)
+          p "These words are antigrams"
+          return "These words are antigrams"
         end
       else
         p "These do not have vowels"
         return "These do not have vowels"
       end
     end
+  end
+
+  def antigram(word1, word2)
+    word_check_first = word1.upcase().split("")
+    word_check_second = word2.upcase().split("")
+
+    is_antigram = (word_check_first & word_check_second).any?
   end
 
 end

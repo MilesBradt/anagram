@@ -11,9 +11,9 @@ require ('anagram')
       expect(new_test.anagram_check("tea", "eat")).to(eq("These words are anagrams"))
     end
 
-    it("Should check if one word includes the same characters as another word") do
+    it("Should check if one word includes the same characters as another word (antigrams)") do
       new_test = Anagram.new()
-      expect(new_test.anagram_check("tea", "not")).to(eq("These words are not anagrams"))
+      expect(new_test.anagram_check("tea", "not")).to(eq("These words are antigrams"))
     end
 
     it("Should check if two words are anagrams regardless of capitalization") do
@@ -50,5 +50,7 @@ require ('anagram')
         new_test = Anagram.new()
         expect(new_test.anagram_check("This tst", "Hist stt")).to(eq("TST and STT do not have vowels"))
     end
+
+
 
 end
